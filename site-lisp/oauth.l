@@ -70,7 +70,9 @@ abcdefghijklmnopqrstuvwxyz" (random 62)))
 (defun get-token (url cred &optional verifier)
   (let* ((auth (auth-header cred 'get url
 			    (if verifier `(:oauth_verifier ,verifier))))
-	 (query (substitute-string (subseq auth 6) ", " "&")))
+	 (query (format nil "~A~@[&oauth_verifier=~A~]"
+		  (substitute-string (subseq auth 6) ", " "&")
+		  verifier)))
     (multiple-value-bind (res status)
 	(xhr:xhr-get url :query query :header `(:Authorization ,auth)
 		     :key #'xhr:xhr-response-values)
@@ -97,9 +99,9 @@ abcdefghijklmnopqrstuvwxyz" (random 62)))
 (defun get-access-token (consumer-key consumer-secret
 			 request-token-url authorize-url access-token-url)
   (let ((cred (list :consumer-key consumer-key
-		    :consumer-secret consumer-secret))
+		    :consumer-secret consumer-secret)))
     (whenlet req-tokens (get-token request-token-url cred)
       (shell-execute (concat authorize-url "?oauth_token=" (getf req-tokens :token)) t)
       (sit-for 1)
       (whenlet pin (read-string "PIN: ")
-	(get-token access-token-url (append cred req-tokens) pin))))))
+	(get-token access-token-url (append cred req-tokens) pin)))))
