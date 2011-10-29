@@ -35,10 +35,11 @@ abcdefghijklmnopqrstuvwxyz" (random 62)))
 (defun hmac-sha-1-bin (key str)
   (let ((h (si:hmac-sha-1 key str))
 	(s (make-sequence 'string 20)))
-    (dotimes (i 20 s)
-      (setf (svref s i)
-	    (code-char (parse-integer h :start (* i 2) :end (* (1+ i) 2)
-				      :radix 16))))))
+    (loop
+      for i from 0 below 40 by 2
+      for n = (parse-integer h :start i :end (+ i 2) :radix 16)
+      do (setf (svref s (/ i 2)) (code-char n)))
+    s))
 
 (defun signature (cred method apiurl params)
   (let* ((sorted (sort (loop for (k v) on params by #'cddr
@@ -68,14 +69,12 @@ abcdefghijklmnopqrstuvwxyz" (random 62)))
      (list :oauth_token token))))
 
 (defun get-token (url cred &optional verifier)
-  (let* ((auth (auth-header cred 'get url
-			    (if verifier `(:oauth_verifier ,verifier))))
-	 (query (format nil "~A~@[&oauth_verifier=~A~]"
-		  (substitute-string (subseq auth 6) ", " "&")
-		  verifier)))
+  (let* ((params (append (make-params cred)
+			 (if verifier `(:oauth_verifier ,verifier))))
+	 (sign (signature cred 'post url params))
+	 (data (append params `(:oauth_signature ,sign))))
     (multiple-value-bind (res status)
-	(xhr:xhr-get url :query query :header `(:Authorization ,auth)
-		     :key #'xhr:xhr-response-values)
+	(xhr:xhr-post url data :key #'xhr:xhr-response-values)
       (if (= status 200)
 	  (let ((token (and (string-match "oauth_token=\\([^&]+\\)" res)
 			    (match-string 1)))
@@ -84,7 +83,7 @@ abcdefghijklmnopqrstuvwxyz" (random 62)))
 	    (if (and token secret)
 		(values (list :token token :token-secret secret) res)
 	      (error (concat "failed getting token:\n" url))))
-	(error (format nil "HTTP status: ~A" status))))))
+	(error (format nil "HTTP status: ~A~%~A" status res))))))
 
 
 ;;; exports
