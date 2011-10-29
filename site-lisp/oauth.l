@@ -91,7 +91,7 @@ abcdefghijklmnopqrstuvwxyz" (random 62)))
   (let* ((oauth-params (make-params cred))
 	 (all-params (append oauth-params params))
 	 (sign (signature cred method apiurl all-params)))
-    (format nil "OAuth ~{~A=~A, ~}oauth_signature=~A"
+    (format nil "OAuth ~{~A=\"~A\", ~}oauth_signature=\"~A\""
             oauth-params (url-encode sign))))
 
 
