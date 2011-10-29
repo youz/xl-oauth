@@ -1,0 +1,22 @@
+# xl-oauth
+
+OAuth 1.0 Client Library for xyzzy
+
+## Install
+(NetInstaller‘Î‰ž—\’è)
+
+
+## Usage
+
+### oauth:get-access-token (CONSUMER-KEY CONSUMER-SECRET REQUEST-TOKEN-URL AUTHORIZE-URL ACCESS-TOKEN-URL)
+- CONSUMER-KEY
+- CONSUMER-SECRET
+- REQUEST-TOKEN-URL
+- AUTHORIZE-URL
+- ACCESS-TOKEN-URL
+
+oauth:auth-header (CRED METHOD APIURL PARAMS)
+- CRED
+- METHOD
+- APIURL
+- PARAMS
