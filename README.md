@@ -21,17 +21,17 @@ OAuth 1.0 クライアントライブラリ for xyzzy
     => access-token, access-token-secret
 
   以下の一連の認証処理を実行し、取得したアクセストークン(oauth_token, oauth_token_secret)を多値で返します。
-  1. リクエストトークンの要求
-  2. 認証用ページ表示 (システム標準のWEBブラウザを起動して表示します)
-  3. PIN (oauth_verifier) 入力
-  4. アクセストークン取得
+    1. リクエストトークンの要求
+    2. 認証用ページ表示 (システム標準のWEBブラウザを起動して表示します)
+    3. PIN (oauth_verifier) 入力
+    4. アクセストークン取得
 
   引数
-  - cosumer-key - サービスプロバイダより発行されたConsumer Key
-  - consumer-secret - サービスプロバイダより発行されたConsumer Secret
-  - request-token-url - リクエストトークン発行用URL
-  - authorize-url - サービスプロバイダの認証用URL
-  - access-token-url - アクセストークン発行用URL
+    * cosumer-key - サービスプロバイダより発行されたConsumer Key
+    * consumer-secret - サービスプロバイダより発行されたConsumer Secret
+    * request-token-url - リクエストトークン発行用URL
+    * authorize-url -- サービスプロバイダの認証用URL
+    * access-token-url -- アクセストークン発行用URL
 
   twitterよりアクセストークンを取得し、ファイルに保存する例
 
@@ -49,13 +49,13 @@ OAuth 1.0 クライアントライブラリ for xyzzy
 
   サービスプロバイダのAPIを利用する際に必要なOAuth認証ヘッダを生成します。
 
-  引数
-  - credential
-    コンシューマキー, コンシューマシークレット, アクセストークン, アクセストークンのplist。
-    キーシンボルはそれぞれ :consumer-key, :consumer-secret, :token, :token-secret です。
-  - method - HTTPメソッドをシンボルか文字列で指定します。
-  - apiurl - APIのURL
-  - params - APIに渡すパラメータをplistで指定します。
+    引数
+      * credential
+        コンシューマキー, コンシューマシークレット, アクセストークン, アクセストークンのplist。
+        キーシンボルはそれぞれ :consumer-key, :consumer-secret, :token, :token-secret です。
+      * method - HTTPメソッドをシンボルか文字列で指定します。
+      * apiurl - APIのURL
+      * params - APIに渡すパラメータをplistで指定します。
 
   twitterの[help/test API](https://dev.twitter.com/docs/api/1/get/help/test)にリクエストを投げる例
 
