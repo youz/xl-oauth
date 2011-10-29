@@ -1,17 +1,17 @@
 # xl-oauth
 
-OAuth 1.0 ƒNƒ‰ƒCƒAƒ“ƒgƒ‰ƒCƒuƒ‰ƒŠ for xyzzy
+OAuth 1.0 ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ©ã‚¤ãƒ–ãƒ©ãƒª for xyzzy
 
 
 ## Install
-- NetInstaller‚ğ‚æ‚èƒCƒ“ƒXƒg[ƒ‹
-  ‰º‹L‚ÌURL‚ÌƒpƒbƒP[ƒWƒŠƒXƒg‚ğ“o˜^‚µAƒpƒbƒP[ƒW`*scrap*`‚æ‚èƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‰º‚³‚¢B
+- NetInstallerã‚’ã‚ˆã‚Šã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+  ä¸‹è¨˜ã®URLã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãƒªã‚¹ãƒˆã‚’ç™»éŒ²ã—ã€ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸`*scrap*`ã‚ˆã‚Šã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ä¸‹ã•ã„ã€‚
   http://youz.github.com/xyzzy/package.l
 
-- è“®ƒCƒ“ƒXƒg[ƒ‹
-  oauth.l ‚ğ`*load-path*`‚É”z’u‚µ‚Ä‚­‚¾‚³‚¢B
+- æ‰‹å‹•ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+  oauth.l ã‚’`*load-path*`ã«é…ç½®ã—ã¦ãã ã•ã„ã€‚
 
-¦ˆË‘¶ƒ‰ƒCƒuƒ‰ƒŠ[xml-http-request](http://miyamuko.s56.xrea.com/xyzzy/xml-http-request/intro.htm)‚ğ•Ê“rƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚è‚Ü‚·B
+â€»ä¾å­˜ãƒ©ã‚¤ãƒ–ãƒ©ãƒª[xml-http-request](http://miyamuko.s56.xrea.com/xyzzy/xml-http-request/intro.htm)ã‚’åˆ¥é€”ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
 
 
 ## Usage
@@ -20,20 +20,20 @@ OAuth 1.0 ƒNƒ‰ƒCƒAƒ“ƒgƒ‰ƒCƒuƒ‰ƒŠ for xyzzy
   (consumer-key consumer-secret request-token-url authorize-url access-token-url)
     => access-token, access-token-secret
 
-  ˆÈ‰º‚Ìˆê˜A‚Ì”FØˆ—‚ğÀs‚µAæ“¾‚µ‚½ƒAƒNƒZƒXƒg[ƒNƒ“(oauth_token, oauth_token_secret)‚ğ‘½’l‚Å•Ô‚µ‚Ü‚·B
-  1. ƒŠƒNƒGƒXƒgƒg[ƒNƒ“‚Ì—v‹
-  2. ”FØ—pƒy[ƒW•\¦ (ƒVƒXƒeƒ€•W€‚ÌWEBƒuƒ‰ƒEƒU‚ğ‹N“®‚µ‚Ä•\¦‚µ‚Ü‚·)
-  3. PIN (oauth_verifier) “ü—Í
-  4. ƒAƒNƒZƒXƒg[ƒNƒ“æ“¾
+  ä»¥ä¸‹ã®ä¸€é€£ã®èªè¨¼å‡¦ç†ã‚’å®Ÿè¡Œã—ã€å–å¾—ã—ãŸã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³(oauth_token, oauth_token_secret)ã‚’å¤šå€¤ã§è¿”ã—ã¾ã™ã€‚
+  1. ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒˆãƒ¼ã‚¯ãƒ³ã®è¦æ±‚
+  2. èªè¨¼ç”¨ãƒšãƒ¼ã‚¸è¡¨ç¤º (ã‚·ã‚¹ãƒ†ãƒ æ¨™æº–ã®WEBãƒ–ãƒ©ã‚¦ã‚¶ã‚’èµ·å‹•ã—ã¦è¡¨ç¤ºã—ã¾ã™)
+  3. PIN (oauth_verifier) å…¥åŠ›
+  4. ã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³å–å¾—
 
-  ˆø”
-  - cosumer-key - ƒT[ƒrƒXƒvƒƒoƒCƒ_‚æ‚è”­s‚³‚ê‚½Consumer Key
-  - consumer-secret - ƒT[ƒrƒXƒvƒƒoƒCƒ_‚æ‚è”­s‚³‚ê‚½Consumer Secret
-  - request-token-url - ƒŠƒNƒGƒXƒgƒg[ƒNƒ“”­s—pURL
-  - authorize-url - ƒT[ƒrƒXƒvƒƒoƒCƒ_‚Ì”FØ—pURL
-  - access-token-url - ƒAƒNƒZƒXƒg[ƒNƒ“”­s—pURL
+  å¼•æ•°
+  - cosumer-key - ã‚µãƒ¼ãƒ“ã‚¹ãƒ—ãƒ­ãƒã‚¤ãƒ€ã‚ˆã‚Šç™ºè¡Œã•ã‚ŒãŸConsumer Key
+  - consumer-secret - ã‚µãƒ¼ãƒ“ã‚¹ãƒ—ãƒ­ãƒã‚¤ãƒ€ã‚ˆã‚Šç™ºè¡Œã•ã‚ŒãŸConsumer Secret
+  - request-token-url - ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒˆãƒ¼ã‚¯ãƒ³ç™ºè¡Œç”¨URL
+  - authorize-url - ã‚µãƒ¼ãƒ“ã‚¹ãƒ—ãƒ­ãƒã‚¤ãƒ€ã®èªè¨¼ç”¨URL
+  - access-token-url - ã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³ç™ºè¡Œç”¨URL
 
-  twitter‚æ‚èƒAƒNƒZƒXƒg[ƒNƒ“‚ğæ“¾‚µAƒtƒ@ƒCƒ‹‚É•Û‘¶‚·‚é—á
+  twitterã‚ˆã‚Šã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³ã‚’å–å¾—ã—ã€ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¿å­˜ã™ã‚‹ä¾‹
 
         (multiple-value-bind (token token-secret)
             (get-access-token *my-app-key* *my-app-secret*
@@ -47,17 +47,17 @@ OAuth 1.0 ƒNƒ‰ƒCƒAƒ“ƒgƒ‰ƒCƒuƒ‰ƒŠ for xyzzy
   (credential method apiurl params)
   => header-string
 
-  ƒT[ƒrƒXƒvƒƒoƒCƒ_‚ÌAPI‚ğ—˜—p‚·‚éÛ‚É•K—v‚ÈOAuth”FØƒwƒbƒ_‚ğ¶¬‚µ‚Ü‚·B
+  ã‚µãƒ¼ãƒ“ã‚¹ãƒ—ãƒ­ãƒã‚¤ãƒ€ã®APIã‚’åˆ©ç”¨ã™ã‚‹éš›ã«å¿…è¦ãªOAuthèªè¨¼ãƒ˜ãƒƒãƒ€ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
 
-  ˆø”
+  å¼•æ•°
   - credential
-    ƒRƒ“ƒVƒ…[ƒ}ƒL[, ƒRƒ“ƒVƒ…[ƒ}ƒV[ƒNƒŒƒbƒg, ƒAƒNƒZƒXƒg[ƒNƒ“, ƒAƒNƒZƒXƒg[ƒNƒ“‚ÌplistB
-    ƒL[ƒVƒ“ƒ{ƒ‹‚Í‚»‚ê‚¼‚ê :consumer-key, :consumer-secret, :token, :token-secret ‚Å‚·B
-  - method - HTTPƒƒ\ƒbƒh‚ğƒVƒ“ƒ{ƒ‹‚©•¶š—ñ‚Åw’è‚µ‚Ü‚·B
-  - apiurl - API‚ÌURL
-  - params - API‚É“n‚·ƒpƒ‰ƒ[ƒ^‚ğplist‚Åw’è‚µ‚Ü‚·B
+    ã‚³ãƒ³ã‚·ãƒ¥ãƒ¼ãƒã‚­ãƒ¼, ã‚³ãƒ³ã‚·ãƒ¥ãƒ¼ãƒã‚·ãƒ¼ã‚¯ãƒ¬ãƒƒãƒˆ, ã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³, ã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³ã®plistã€‚
+    ã‚­ãƒ¼ã‚·ãƒ³ãƒœãƒ«ã¯ãã‚Œãã‚Œ :consumer-key, :consumer-secret, :token, :token-secret ã§ã™ã€‚
+  - method - HTTPãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚·ãƒ³ãƒœãƒ«ã‹æ–‡å­—åˆ—ã§æŒ‡å®šã—ã¾ã™ã€‚
+  - apiurl - APIã®URL
+  - params - APIã«æ¸¡ã™ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’plistã§æŒ‡å®šã—ã¾ã™ã€‚
 
-  twitter‚Ì[help/test API](https://dev.twitter.com/docs/api/1/get/help/test)‚ÉƒŠƒNƒGƒXƒg‚ğ“Š‚°‚é—á
+  twitterã®[help/test API](https://dev.twitter.com/docs/api/1/get/help/test)ã«ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’æŠ•ã’ã‚‹ä¾‹
 
         (let* ((url "http://api.twitter.com/1/help/test.json")
                (cred (list :consumer-key *my-app-key*
@@ -75,5 +75,5 @@ Yousuke Ushiki (<citrus.yubeshi@gmail.com>)
 [@Yubeshi](http://twitter.com/Yubeshi/)
 
 ## Copyright
-MIT License ‚ğ“K—p‚µ‚Ä‚¢‚Ü‚·B
+MIT License ã‚’é©ç”¨ã—ã¦ã„ã¾ã™ã€‚
 
