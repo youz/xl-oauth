@@ -104,3 +104,5 @@ abcdefghijklmnopqrstuvwxyz" (random 62)))
       (sit-for 1)
       (whenlet pin (read-string "PIN: ")
 	(get-token access-token-url (append cred req-tokens) pin)))))
+
+(provide "oauth")
